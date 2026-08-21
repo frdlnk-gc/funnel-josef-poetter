@@ -1,0 +1,37 @@
+[
+  {
+    "name": "creative-1-benefit-checkliste",
+    "bilder": [
+      "logo.jpg",
+      "img/f6.jpg"
+    ],
+    "prompt": "Erstelle ein Werbe-Creative im Hochformat für eine Meta-Stellenanzeige. Beigefügt: (1) das Firmenlogo 'Josef Pötter – Gärtner von Eden' mit Apfel-Motiv, (2) ein Foto eines hochwertigen Gartens mit Pool aus der Luft. Nutze das Garten-Foto unverändert als rechte Bildhälfte, links eine ruhige dunkelgrüne Fläche (#1E4620) mit dezentem Verlauf. Layout links, von oben nach unten: Headline (groß, fett, weiß): „GÄRTNER“ mit kleinem Zusatz „(m/w/d)“. Standort-Zeile mit kleinem roten Pin-Symbol: „Hattingen · Bochum · Essen & Umgebung“. 4 Benefit-Pills (weiße abgerundete Balken mit grünem Häkchen, schwarze Schrift): „Start von zu Hause“ / „Keine Montage mit Übernachtung“ / „Firmenhandy & Jobrad“ / „Unbefristet in Vollzeit“. Unten ein grüner Balken (#50B245, weiße Schrift): „Erhalte Dein unverbindliches Job-Angebot – ohne Lebenslauf & Anschreiben“. Das beigefügte Logo original und unverändert oben links auf weißer Mini-Kachel. Verboten: Telefonnummern, E-Mail-Adressen, Website-URLs, QR-Codes, Personennamen, Gehaltszahlen, erfundene Siegel; Logo und Foto nicht verändern oder umfärben. Sauberes, modernes Recruiting-Design, gut lesbar auf dem Handy. Aller Text vollständig innerhalb seiner Flächen, nichts angeschnitten, Deutsch fehlerfrei."
+  },
+  {
+    "name": "creative-2-foto-collage",
+    "bilder": [
+      "logo.jpg",
+      "img/f1.jpg",
+      "img/f4.jpg",
+      "img/f8.jpg"
+    ],
+    "prompt": "Erstelle ein Werbe-Creative im Hochformat für eine Meta-Stellenanzeige als moderne Foto-Collage im Raster (2 Spalten). Beigefügt: (1) das Firmenlogo 'Josef Pötter – Gärtner von Eden' mit Apfel-Motiv, (2) Foto Villa mit Poolgarten, (3) Foto Rhododendron-Garten, (4) Foto japanischer Garten. Oben links eine weiße Kachel mit dem beigefügten Logo (original, unverändert), darunter groß „Gärtner“ + klein „(m/w/d)“ + Standort-Zeile mit rotem Pin-Symbol „Hattingen · Bochum · Essen“. Die drei Garten-Fotos unverändert als gleich große Kacheln mit schmalen weißen Stegen verteilen. Unten rechts eine grüne Kachel (#50B245, weiße Schrift): „Jetzt unverbindliches Job-Angebot erhalten – mit 1 Klick!“. Verboten: Telefonnummern, E-Mail-Adressen, Website-URLs, QR-Codes, Personennamen, Gehaltszahlen, zusätzliche Texte oder Logos; Fotos nur zuschneiden, nicht verändern. Clean, hell, wie ein echter Einblick in die Referenzen. Aller Text vollständig innerhalb seiner Flächen, nichts angeschnitten, Deutsch fehlerfrei."
+  },
+  {
+    "name": "creative-3-standort-karte",
+    "bilder": [
+      "logo.jpg",
+      "img/karte.jpg",
+      "img/hero.jpg"
+    ],
+    "prompt": "Erstelle ein Werbe-Creative im Hochformat für eine Meta-Stellenanzeige. Beigefügt: (1) das Firmenlogo 'Josef Pötter – Gärtner von Eden' mit Apfel-Motiv, (2) eine Landkarte der Region Hattingen (mit Bochum, Essen, Wuppertal im Umkreis), (3) ein Foto des Firmensitzes mit Formschnitt-Gehölzen. Untere zwei Drittel: die Landkarte unverändert, male einen kräftigen roten Kreis (Handdraw-Stil) um die Bildmitte der Karte und einen dicken roten Pfeil, der von schräg oben auf den Kreis zeigt. Oberes Drittel: weiße Fläche mit links „GÄRTNER“ (groß, schwarz) + „(m/w/d)“ + grüner Kachel „Ohne Lebenslauf & Anschreiben!“ (weiße Schrift, #50B245), rechts daneben das Firmensitz-Foto unverändert als kleine abgerundete Kachel; das beigefügte Logo original und unverändert oben rechts. Auf der Karte selbst KEINEN zusätzlichen Text ergänzen. Verboten: Telefonnummern, E-Mail-Adressen, Website-URLs, QR-Codes, Personennamen, Gehaltszahlen; Logo/Fotos/Karte nicht umfärben oder verfremden (nur Kreis + Pfeil auf der Karte ergänzen). Aller Text vollständig innerhalb seiner Flächen, nichts angeschnitten, Deutsch fehlerfrei."
+  },
+  {
+    "name": "creative-4-dein-arbeitsplatz",
+    "bilder": [
+      "logo.jpg",
+      "img/f5.jpg"
+    ],
+    "prompt": "Erstelle ein Werbe-Creative im Hochformat für eine Meta-Stellenanzeige. Beigefügt: (1) das Firmenlogo 'Josef Pötter – Gärtner von Eden' mit Apfel-Motiv, (2) ein Foto einer modernen Villa mit makellosem Rasen und Natursteinmauer. Das Villa-Foto unverändert als vollflächigen Hintergrund, unten ein weicher dunkler Verlauf für Lesbarkeit. Text unten, clean gesetzt: Headline (groß, weiß, fett): „Dein Arbeitsplatz sieht so aus.“ Subline (kleiner, weiß, mit kleinem Pin-Symbol vor der Region): „Gärtner (m/w/d) · Raum Hattingen, Bochum & Essen“. Grüner Button-Balken (#50B245, weiße Schrift): „Job-Angebot in 60 Sekunden erhalten“. Das beigefügte Logo original und unverändert oben links auf weißer Mini-Kachel. Verboten: Telefonnummern, E-Mail-Adressen, Website-URLs, QR-Codes, Personennamen, Gehaltszahlen, weitere Texte; Foto und Logo nicht verändern. Aller Text vollständig innerhalb seiner Flächen, nichts angeschnitten, Deutsch fehlerfrei."
+  }
+]
