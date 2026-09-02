@@ -124,5 +124,19 @@
     "img/f2.jpg",
     "img/f7.jpg",
     "img/f3.jpg"
+  ],
+  "fuehrerschein_optionen": [
+    {
+      "label": "Ja, Klasse B",
+      "icon": "🚗"
+    },
+    {
+      "label": "Ja, Klasse B + BE",
+      "icon": "🚚"
+    },
+    {
+      "label": "Ja, Klasse C/CE (LKW)",
+      "icon": "🚛"
+    }
   ]
 }

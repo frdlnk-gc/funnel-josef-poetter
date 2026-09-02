@@ -99,6 +99,7 @@ h1,h2,h3,h4,p,li,span,a,label,button,.badge,.hero-benefit,.htile,.option,.uf,.ka
 .htile .ico{width:36px;height:36px;flex:none;border-radius:10px;background:color-mix(in srgb,var(--primary) 14%,#fff);display:grid;place-items:center;font-size:18px}
 .htile .arr{margin-left:auto;flex:none;color:var(--primary-text);font-weight:800;transition:transform .2s}
 .htile:hover .arr{transform:translateX(3px)}
+.osub{display:block;font-weight:600;font-size:12.5px;opacity:.62;margin-top:2px;line-height:1.3}
 .hero-micro{font-size:12.5px;font-weight:500;opacity:.78;margin-top:12px}
 /* Hero mit Kundenfoto (Banner aus der Stellenanzeige): dunkles Overlay + CI-Tint, Text immer weiß */
 .hero.has-photo{--on-primary:#fff;background-image:linear-gradient(color-mix(in srgb,var(--primary) 28%,transparent),color-mix(in srgb,var(--primary) 10%,transparent)),linear-gradient(rgba(10,13,11,.58),rgba(10,13,11,.44)),var(--hero-photo);background-size:auto,auto,cover;background-position:center;background-repeat:no-repeat}
@@ -535,8 +536,9 @@ footer{background:#fff;border-top:1px solid var(--line);padding:30px 16px 34px;t
 "use strict";
 var CFG = {"webhook": "https://hook.eu1.make.com/qbgtbw4765qldxs6k603mznvra7ml7s9", "kunde_tab": "02 Josef Pötter GmbH", "kunde": "Josef Pötter GmbH", "stelle": "Gärtner (m/w/d)", "quelle": "https://josef-poetter.green-careers.de"};
 var FACHRICHTUNGEN = [{"label": "Garten- & Landschaftsbau", "icon": "🌿", "qualifikationen": [{"label": "Ausgebildeter Landschaftsgärtner", "icon": "🎓"}, {"label": "Meister / Techniker", "icon": "🏅"}, {"label": "Erfahren ohne Ausbildung", "icon": "💪"}, {"label": "Quereinsteiger", "icon": "🔄"}]}, {"label": "Gärtnerei / Grünflächenpflege", "icon": "🌱", "qualifikationen": [{"label": "Ausgebildeter Gärtner", "icon": "🎓"}, {"label": "Meister / Techniker", "icon": "🏅"}, {"label": "Erfahren ohne Ausbildung", "icon": "💪"}, {"label": "Quereinsteiger", "icon": "🔄"}]}, {"label": "Anderer Bereich", "icon": "🛠️", "qualifikationen": [{"label": "Ausbildung in anderem Gewerk", "icon": "🎓"}, {"label": "Meister / Techniker", "icon": "🏅"}, {"label": "Erfahren ohne Ausbildung", "icon": "💪"}, {"label": "Quereinsteiger", "icon": "🔄"}]}];
+var STELLEN = [];   /* >1 Eintrag = kombinierte Kampagne: Stellen-Auswahl als Frage 1 */
 var QUALIFIKATIONEN = [{"label": "Ausgelernt", "icon": "🎓"}, {"label": "Meister / Techniker", "icon": "🏅"}, {"label": "Erfahren ohne Ausbildung", "icon": "💪"}, {"label": "Quereinsteiger", "icon": "🔄"}];
-var FUEHRERSCHEIN = [{"label": "Ja, Klasse B", "icon": "🚗"}, {"label": "Ja, Klasse B + BE", "icon": "🚚"}, {"label": "Ja, Klasse C/CE (LKW)", "icon": "🚛"}, {"label": "Nein", "icon": "❌"}];
+var FUEHRERSCHEIN = [{"label": "Ja, Klasse B", "icon": "🚗"}, {"label": "Ja, Klasse B + BE", "icon": "🚚"}, {"label": "Ja, Klasse C/CE (LKW)", "icon": "🚛"}];
 var ZUSATZ = {"verfuegbarkeit": [{"label": "Sofort", "icon": "⚡"}, {"label": "Innerhalb von 4 Wochen", "icon": "📅"}, {"label": "In 1–3 Monaten", "icon": "🗓️"}, {"label": "Muss ich klären", "icon": "🤔"}], "situation": [{"label": "In Festanstellung", "icon": "💼"}, {"label": "Arbeitssuchend", "icon": "🔍"}, {"label": "In Ausbildung / Umschulung", "icon": "🎓"}, {"label": "Selbstständig", "icon": "🛠️"}]};
 
 /* Lead-ID für den Teil-B-Upsert (gleiche Mechanik wie die GC-Bewerber-LPs) */
@@ -655,11 +657,15 @@ gcFunnelTrack('lp_view',null);
 })();
 
 /* ---------- Funnel ---------- */
-var S={fachrichtung:null,qualifikation:null,erfahrung:null,plz_ort:'',name:'',telefon:'',email:'',verfuegbarkeit:null,fuehrerschein:null,situation:null,nachricht:''};
-var NEXT={'s-fach':'s-quali','s-quali':'s-erfahrung','s-erfahrung':'s-fs','s-fs':'s-plz','s-plz':'s-kontakt','s-b1':'s-b2','s-b2':'s-b4'};
-var LABELS={'s-fach':'Schritt 1 von 3','s-quali':'Schritt 1 von 3','s-erfahrung':'Schritt 2 von 3','s-fs':'Schritt 2 von 3','s-plz':'Schritt 3 von 3','s-kontakt':'Schritt 3 von 3','s-done':'Fertig','s-b1':'Profil · Frage 1 von 2','s-b2':'Profil · Frage 2 von 2','s-b4':'Profil · fast fertig','s-fertig':'Profil komplett'};
-var PROG={'s-fach':8,'s-quali':20,'s-erfahrung':36,'s-fs':52,'s-plz':66,'s-kontakt':82,'s-done':100,'s-b1':30,'s-b2':60,'s-b4':85,'s-fertig':100};
-var CUR='s-fach', NAV_POP=false, MOUNTED=false, STARTED=false, OVBRAND=false;
+var S={stelle:null,fachrichtung:null,qualifikation:null,erfahrung:null,plz_ort:'',name:'',telefon:'',email:'',verfuegbarkeit:null,fuehrerschein:null,situation:null,nachricht:''};
+var MULTI_STELLE = STELLEN.length>1;
+var NEXT={'s-stelle':'s-fach','s-fach':'s-quali','s-quali':'s-erfahrung','s-erfahrung':'s-fs','s-fs':'s-plz','s-plz':'s-kontakt','s-b1':'s-b2','s-b2':'s-b4'};
+var LABELS={'s-stelle':'Schritt 1 von 3','s-fach':'Schritt 1 von 3','s-quali':'Schritt 1 von 3','s-erfahrung':'Schritt 2 von 3','s-fs':'Schritt 2 von 3','s-plz':'Schritt 3 von 3','s-kontakt':'Schritt 3 von 3','s-done':'Fertig','s-b1':'Profil · Frage 1 von 2','s-b2':'Profil · Frage 2 von 2','s-b4':'Profil · fast fertig','s-fertig':'Profil komplett'};
+var PROG = MULTI_STELLE
+  ? {'s-stelle':6,'s-fach':18,'s-quali':30,'s-erfahrung':44,'s-fs':58,'s-plz':72,'s-kontakt':86,'s-done':100,'s-b1':30,'s-b2':60,'s-b4':85,'s-fertig':100}
+  : {'s-fach':8,'s-quali':20,'s-erfahrung':36,'s-fs':52,'s-plz':66,'s-kontakt':82,'s-done':100,'s-b1':30,'s-b2':60,'s-b4':85,'s-fertig':100};
+var CUR = MULTI_STELLE ? 's-stelle' : 's-fach';
+var NAV_POP=false, MOUNTED=false, STARTED=false, OVBRAND=false;
 var card=document.getElementById('funnelCard');
 var funnelSec=document.querySelector('.funnel-sec');
 
@@ -693,9 +699,11 @@ function renderOptions(boxId, list, field){
     b.innerHTML='<span class="ico"></span><span class="lbl"></span><span class="check"></span>';
     b.querySelector('.ico').textContent=f.icon||'👷';
     b.querySelector('.lbl').textContent=f.label;
+    if(f.sub){ var s=document.createElement('small'); s.className='osub'; s.textContent=f.sub; b.querySelector('.lbl').appendChild(s); }
     box.appendChild(b);
   });
 }
+if(MULTI_STELLE) renderOptions('stelleOptions', STELLEN, 'stelle');
 renderOptions('fachOptions', FACHRICHTUNGEN, 'fachrichtung');
 renderOptions('qualiOptions', QUALIFIKATIONEN, 'qualifikation');
 renderOptions('fsOptions', FUEHRERSCHEIN, 'fuehrerschein');
@@ -714,26 +722,31 @@ function renderQualiFor(fachLabel){
 /* Frage 1 als Kacheln im Hero (bewährte v2-Mechanik: Bewerbung startet above the fold) */
 (function(){
   var box=document.getElementById('heroFach');
-  FACHRICHTUNGEN.forEach(function(f){
+  var LIST  = MULTI_STELLE ? STELLEN : FACHRICHTUNGEN;
+  var FIELD = MULTI_STELLE ? 'stelle' : 'fachrichtung';
+  var SYNC  = MULTI_STELLE ? '#stelleOptions .opt' : '#fachOptions .opt';
+  LIST.forEach(function(f){
     var b=document.createElement('button');
     b.type='button'; b.className='htile';
     b.setAttribute('data-value',f.label);
     b.innerHTML='<span class="ico"></span><span class="lbl"></span><span class="arr">→</span>';
     b.querySelector('.ico').textContent=f.icon||'👷';
     b.querySelector('.lbl').textContent=f.label;
+    if(f.sub){ var s=document.createElement('small'); s.className='osub'; s.textContent=f.sub; b.querySelector('.lbl').appendChild(s); }
     box.appendChild(b);
   });
   box.addEventListener('click',function(e){
     var t=e.target.closest('.htile'); if(!t) return;
     if(!STARTED){ STARTED=true; mountForms(); gcFunnelTrack('form_start',null); }
-    S.fachrichtung=t.getAttribute('data-value');
-    renderQualiFor(S.fachrichtung);
+    var val=t.getAttribute('data-value');
+    S[FIELD]=val;
+    if(!MULTI_STELLE) renderQualiFor(val);
     /* Auswahl im Funnel-Screen synchron markieren (für Zurück-Navigation) */
-    document.querySelectorAll('#fachOptions .opt').forEach(function(o){
-      o.classList.toggle('sel', o.dataset.value===S.fachrichtung);
+    document.querySelectorAll(SYNC).forEach(function(o){
+      o.classList.toggle('sel', o.dataset.value===val);
     });
     openOverlay();
-    go('s-quali');
+    go(MULTI_STELLE ? 's-fach' : 's-quali');
   });
 })();
 
@@ -781,7 +794,7 @@ window.addEventListener('popstate',function(e){
   var s=e.state&&e.state.screen;
   if(s&&document.getElementById(s)&&s!==CUR){ NAV_POP=true; openOverlay(); go(s); NAV_POP=false; }
 });
-history.replaceState({screen:'s-fach'},'');
+history.replaceState({screen:CUR},'');
 
 card.addEventListener('click',function(e){
   var back=e.target.closest('[data-back]');
@@ -836,7 +849,7 @@ function submit(){
   }catch(e){}
 
   var payload={
-    kunde_tab:CFG.kunde_tab, kunde:CFG.kunde, stelle:CFG.stelle, quelle:CFG.quelle,
+    kunde_tab:CFG.kunde_tab, kunde:CFG.kunde, stelle:(S.stelle||CFG.stelle), quelle:CFG.quelle,
     name:S.name, telefon:S.telefon, email:S.email,
     fachrichtung:S.fachrichtung, qualifikation:S.qualifikation,
     erfahrung:S.erfahrung, fuehrerschein:S.fuehrerschein,
