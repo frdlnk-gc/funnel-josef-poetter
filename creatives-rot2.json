@@ -1,0 +1,37 @@
+[
+ {
+  "name": "creative-5-start-von-zuhause",
+  "logo": "logo.jpg",
+  "foto": "img/f3.jpg",
+  "primary": "#50B245",
+  "kicker": "JOSEF PÖTTER SUCHT",
+  "headline": [
+   "Start von zu Hause.",
+   "Ohne Umweg zur Baustelle."
+  ],
+  "subline": "Gärtner (m/w/d) · Hattingen · Bochum · Essen & Umgebung",
+  "cta": "Job-Angebot in 60 Sekunden erhalten",
+  "fokus": [
+   0.5,
+   0.55
+  ]
+ },
+ {
+  "name": "creative-6-ohne-lebenslauf",
+  "logo": "logo.jpg",
+  "foto": "img/f8.jpg",
+  "primary": "#50B245",
+  "kicker": "GÄRTNER (M/W/D) IN HATTINGEN",
+  "headline": [
+   "Ohne Lebenslauf.",
+   "Ohne Anschreiben."
+  ],
+  "subline": "In 60 Sekunden zum unverbindlichen Job-Angebot",
+  "cta": "Jetzt Job-Angebot sichern",
+  "fokus": [
+   0.5,
+   0.5
+  ],
+  "kicker_ink": "#FFFFFF"
+ }
+]
