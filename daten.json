@@ -1,26 +1,25 @@
 {
   "firma": "Josef Pötter GmbH",
-  "stelle": "Gärtner (m/w/d)",
-  "ort": "Hattingen",
+  "stelle": "Landschaftsgärtner & Quereinsteiger (m/w/d)",
+  "ort": "Gronau-Epe",
   "farbe_primary": "#50B245",
   "farbe_secondary": "#912F60",
-  "region_badge": "Hattingen & Umgebung",
-  "benefit_top": "Start von zu Hause – ohne Umweg direkt zur Baustelle",
+  "region_badge": "Gronau-Epe & Umgebung",
+  "benefit_top": "Auch für Quereinsteiger – Führerschein kein Muss",
   "benefits": [
-    "Start von zu Hause – keine Fahrt zum Betriebssitz",
+    "Quereinsteiger mit handwerklichem Geschick willkommen",
+    "Intensive Einarbeitung durch erfahrene Gärtnermeister",
     "Keine Montageeinsätze mit Übernachtung",
     "Firmenhandy & Jobrad-Leasing",
     "Betriebliche Altersvorsorge & Gesundheitsangebote",
-    "Interne Karrierechancen – bis zum eigenen Pflegeteam",
     "Flexible Arbeitszeiten & flache Hierarchien"
   ],
   "aufgaben": [
-    "Eigenständige Pflegeeinsätze in hochwertigen Privatgärten und Außenanlagen – mit eigener Touren- und Termineinteilung",
-    "Form- und Rückschnitt an Gehölzen, Stauden und Gräsern sowie spezielle Rasenpflege (Aerifizieren, Topdressing, Düngung)",
-    "Betreuung und Beratung der Kunden als direkter Ansprechpartner vor Ort",
-    "Perspektive: Aufbau und Leitung eines eigenen Gartenpflegeteams"
+    "Mitarbeit im Team an anspruchsvollen Projekten für private, gewerbliche und öffentliche Auftraggeber",
+    "Anlage und Pflege von Gärten und Außenanlagen – vom Form- und Rückschnitt bis zur Rasenpflege",
+    "Anpacken mit Maschinen und Geräten – handwerkliches Geschick zählt mehr als der Lebenslauf"
   ],
-  "anforderung": "Abgeschlossene Ausbildung als Gärtner (m/w/d) oder vergleichbare Berufserfahrung – Führerschein Klasse B/BE, idealerweise Sachkundenachweis Pflanzenschutz.",
+  "anforderung": "Ausbildung als Landschaftsgärtner bzw. Gärtner, Erfahrung im Garten- und Landschaftsbau – oder als Quereinsteiger echtes handwerkliches Geschick. Ein Führerschein ist kein Muss.",
   "fachrichtungen_frage": "Was ist dein beruflicher Hintergrund?",
   "fachrichtungen": [
     {
@@ -68,7 +67,7 @@
       ]
     },
     {
-      "label": "Anderer Bereich",
+      "label": "Handwerk / anderer Bereich",
       "icon": "🛠️",
       "qualifikationen": [
         {
@@ -105,14 +104,14 @@
         "label": "Jahre im Verband"
       }
     ],
-    "text": "Die Josef Pötter GmbH ist ein familiengeführtes Unternehmen mit Sitz in Gronau-Epe – seit 1935. Das Team realisiert anspruchsvolle Projekte für private, gewerbliche und öffentliche Auftraggeber, ist seit über 50 Jahren Mitglied im Verband Garten-, Landschafts- und Sportplatzbau NRW und baut jetzt sein Gartenpflege-Team im Ruhrgebiet auf."
+    "text": "Die Josef Pötter GmbH ist ein familiengeführtes Unternehmen mit Sitz in Gronau-Epe – seit 1935. Das Team realisiert anspruchsvolle Projekte für private, gewerbliche und öffentliche Auftraggeber und ist seit über 50 Jahren Mitglied im Verband Garten-, Landschafts- und Sportplatzbau NRW."
   },
   "kunde_tab": "02 Josef Pötter GmbH",
   "quelle": "https://josef-poetter.green-careers.de",
   "logo": "logo.jpg",
   "karte": {
     "bild": "img/karte.jpg",
-    "label": "Hattingen"
+    "label": "Gronau-Epe"
   },
   "hero_bild": "img/hero.jpg",
   "bilder": [
@@ -125,18 +124,5 @@
     "img/f7.jpg",
     "img/f3.jpg"
   ],
-  "fuehrerschein_optionen": [
-    {
-      "label": "Ja, Klasse B",
-      "icon": "🚗"
-    },
-    {
-      "label": "Ja, Klasse B + BE",
-      "icon": "🚚"
-    },
-    {
-      "label": "Ja, Klasse C/CE (LKW)",
-      "icon": "🚛"
-    }
-  ]
+  "plz": "48599"
 }
