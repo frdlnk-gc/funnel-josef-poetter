@@ -1,0 +1,24 @@
+[
+ {
+  "name": "creative-1-gronau-karten-hook",
+  "logo": "logo.jpg",
+  "foto": "img/foto-hd-chef-portrait.jpg",
+  "fokus": [
+   0.5,
+   0.3
+  ],
+  "karte": "img/karte.jpg",
+  "primary": "#50B245",
+  "headline": [
+   "LANDSCHAFTS-",
+   "GÄRTNER &",
+   "QUEREINSTEIGER"
+  ],
+  "headline_zusatz": "(m/w/d)",
+  "pill": [
+   "Ohne Lebenslauf &",
+   "Anschreiben!"
+  ],
+  "ort": "Gronau · Epe · Ahaus · Ochtrup & Umgebung"
+ }
+]

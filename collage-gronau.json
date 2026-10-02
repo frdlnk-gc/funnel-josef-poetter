@@ -1,0 +1,39 @@
+[
+ {
+  "name": "creative-2-gronau-collage",
+  "logo": "logo.jpg",
+  "fotos": [
+   "img/foto-hd-chef-portrait.jpg",
+   "img/foto-hd-pool-garten.jpg",
+   "img/foto-hd-strasse-beete.jpg"
+  ],
+  "fokus": [
+   [
+    0.5,
+    0.3
+   ],
+   [
+    0.5,
+    0.5
+   ],
+   [
+    0.5,
+    0.5
+   ]
+  ],
+  "primary": "#50B245",
+  "ink": "#1E4D1A",
+  "headline": [
+   "Landschafts-",
+   "gärtner &",
+   "Quereinsteiger"
+  ],
+  "headline_zusatz": "(m/w/d)",
+  "ort": "Gronau-Epe · Ahaus · Ochtrup",
+  "cta": [
+   "Jetzt unverbindliches",
+   "Job-Angebot erhalten –",
+   "mit 1 Klick!"
+  ]
+ }
+]

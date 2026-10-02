@@ -1,0 +1,45 @@
+[
+ {
+  "name": "creative-3-gronau-wir-suchen",
+  "logo": "logo.jpg",
+  "foto": "img/foto-hd-pool-garten.jpg",
+  "primary": "#50B245",
+  "panel": "top",
+  "panel_hoehe": 0.56,
+  "panel_bg": "#FFFFFF",
+  "kicker": "WIR SUCHEN IN GRONAU-EPE",
+  "headline": [
+   "Landschaftsgärtner &",
+   "Quereinsteiger (m/w/d)"
+  ],
+  "subline": "Gronau, Epe, Ahaus, Ochtrup & Umgebung",
+  "cta": "Jetzt in 60 Sekunden bewerben",
+  "fokus": [
+   0.5,
+   0.5
+  ]
+ },
+ {
+  "name": "creative-4-gronau-checkliste",
+  "logo": "logo.jpg",
+  "foto": "img/foto-hd-strasse-beete.jpg",
+  "primary": "#50B245",
+  "panel": "bottom",
+  "panel_hoehe": 0.56,
+  "kicker": "GRONAU-EPE & UMGEBUNG",
+  "headline": [
+   "Landschaftsgärtner &",
+   "Quereinsteiger (m/w/d)"
+  ],
+  "checkliste": [
+   "Quereinsteiger willkommen",
+   "Führerschein kein Muss",
+   "Einarbeitung durch Gärtnermeister"
+  ],
+  "cta": "Ohne Lebenslauf bewerben",
+  "fokus": [
+   0.5,
+   0.5
+  ]
+ }
+]
